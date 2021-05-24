@@ -34,7 +34,7 @@
                 </th>
                 <th scope="col">Type</th>
                 <th scope="col">Quota</th>
-                <th scope="col"> </th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody>

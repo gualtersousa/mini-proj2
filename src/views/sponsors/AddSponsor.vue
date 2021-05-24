@@ -5,7 +5,7 @@
       <HeaderPage title="Adicionar SPONSOR" />
 
       <!--FORM-->
-      <b-row>
+        <b-row>
         <b-col cols="2"></b-col>
         <b-col>
             <!--MENU DE TOPO-->
@@ -21,7 +21,8 @@
         <b-col cols="1"></b-col>
          
       </b-row>
-          <form @submit.prevent="add">
+
+         <form @submit.prevent="add">
             <!--input-box nome-->
             <div class="form-group">
               <input
@@ -29,38 +30,37 @@
                 type="text"
                 class="form-control form-control-lg"
                 id="txtName"
-                placeholder="Introduza o nome"
+                placeholder="introduza o nome"
                 required
               />
             </div>
-            
-              <!--input-box percentagem-->
-            <div class="form-group">
-              <input
-                v-model="name"
-                type="text"
+            <!--opcão-box Type de SPONSOR-->
+               <div class="form-group">
+              <select
+                id="sltGroup"
                 class="form-control form-control-lg"
-                id="txtName"
-                placeholder="Percentagem de quota"
+                v-model="type"
                 required
-              />
+              >
+                <option value>-- SELECIONA Type--</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="h3">3</option>
+              </select>
             </div>
-              <!--input-box tipo-->
-            <div class="form-group">
-              <input
-                v-model="name"
-                type="text"
+            <!--text-box  atribuir Quota do EXPERT-->
+               <div class="form-group">     
+              <textarea
+                id="txtDescription"
                 class="form-control form-control-lg"
-                id="txtName"
-                placeholder="Tipo de parceiro"
+                placeholder="Atribua uma percentagem de 0 a 100 explique brevemente o motivo da atribuição"
+                cols="30"
+                rows="10"
+                v-model="description"
                 required
-              />
+              ></textarea>
             </div>
-
-         
-          
-
-            <button type="submit" class="btn btn-outline-success btn-lg mr-2">
+ <button type="submit" class="btn btn-outline-success btn-lg mr-2">
               <i class="fas fa-plus-square"></i> ADICIONAR
             </button>
 
