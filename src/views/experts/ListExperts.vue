@@ -10,7 +10,7 @@
             :to="{name:'addExpert'}"
             tag="button"
             class="btn btn-outline-success mr-2 mt-2"
-          ><i class="fas fa-plus-square"></i> ADICIONAR EXPERTS</router-link>
+          ><i class="fas fa-plus-square"></i> ADICIONAR EXPERT</router-link>
           <router-link
             :to="{name:'admin'}"
             tag="button"
@@ -34,6 +34,7 @@
                   </th>
                 <th scope="col">CLASS</th>
                 <th scope="col">QUOTA</th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody>

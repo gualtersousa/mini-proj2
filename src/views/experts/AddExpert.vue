@@ -5,14 +5,10 @@
       <HeaderPage title="Adicionar EXPERT" />
 
       <!--FORM-->
-
-      <b-row>
+        <b-row>
         <b-col cols="2"></b-col>
-        
-          <b-col>
-     
-    
-      <!--MENU DE TOPO-->
+        <b-col>
+            <!--MENU DE TOPO-->
       <b-row class="mb-4">
         <b-col cols="0"></b-col>
         <b-col>
@@ -25,8 +21,8 @@
         <b-col cols="1"></b-col>
          
       </b-row>
-                  
-          <form @submit.prevent="add">
+
+         <form @submit.prevent="add">
             <!--input-box nome-->
             <div class="form-group">
               <input
@@ -34,34 +30,35 @@
                 type="text"
                 class="form-control form-control-lg"
                 id="txtName"
-                placeholder="Introduza o nome"
+                placeholder="introduza o nome"
                 required
               />
-              
             </div>
-          <!--input-box classe do expert-->
+            <!--opcão-box Class de EXPERT-->
             <div class="form-group">
-              <input
-                v-model="name"
-                type="text"
+              <select
+                id="sltGroup"
                 class="form-control form-control-lg"
-                id="txtName"
-                placeholder="Classe"
+                v-model="group"
                 required
-              />
-              
+              >
+                <option value>-- SELECIONA CLASS --</option>
+                <option value="TOP">TOP</option>
+                <option value="EASY">Easy</option>
+                <option value="AMATEUR">Amador</option>
+              </select>
             </div>
-          <!--input-box tipo de exoert-->
-            <div class="form-group">
-              <input
-                v-model="name"
-                type="text"
+            <!--text-box  atribuir Quota do EXPERT-->
+               <div class="form-group">     
+              <textarea
+                id="txtDescription"
                 class="form-control form-control-lg"
-                id="txtName"
-                placeholder="Tipo de Expert (Quota)"
+                placeholder="Atribua um valor de  0 a 100 explique o motivo da atribuição"
+                cols="30"
+                rows="10"
+                v-model="description"
                 required
-              />
-              
+              ></textarea>
             </div>
 
             
