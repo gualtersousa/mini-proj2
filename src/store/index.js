@@ -17,7 +17,6 @@ export default new Vuex.Store({
   mutations: moduleBase.mutations,
   state: moduleBase.state,
   actions: moduleBase.actions,
- 
   modules: {
     auth: moduleAuth,
     animal: moduleAnimal,

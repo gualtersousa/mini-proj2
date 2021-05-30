@@ -19,11 +19,11 @@
         </b-col>
         <b-col cols="1"></b-col>
       </b-row>
-      
       <!--TABLE-->
       <b-row>
         <b-col cols="1"></b-col>
         <b-col>
+
           <table class="table table-striped">
             <thead class="thead-dark">
               <tr>
@@ -38,9 +38,13 @@
             </thead>
             <tbody>
               <tr v-for="question of questions" :key="question._id">
+
                 <td  class="pt-4">{{question.question}}</td>
                 <td class="pt-4">{{question.level}}</td>
+               
                 <td>
+                  
+                  
                   <router-link
                     :to="{name:'editQuestion', params:{questionId: question._id}}"
                     tag="button"
@@ -60,9 +64,11 @@
               </tr>
             </tbody>
           </table>
+
         </b-col>
           <b-col cols="1"></b-col>
       </b-row>
+      
     </b-container>
   </section>
 </template>
@@ -70,8 +76,10 @@
 <script>
 import {
   FETCH_QUESTIONS,
-  REMOVE_QUESTION
-} from "@/store/questions/question.constants";
+  REMOVE_QUESTION,
+  
+} 
+from "@/store/questions/question.constants";
 import HeaderPage from "@/components/HeaderPage.vue"
 import { mapGetters } from "vuex";
 

@@ -2,27 +2,13 @@
   <!-- Portfolio Section -->
   <section class="page-section">
     <b-container>
-      <HeaderPage title="Adicionar SPONSOR" />
+      <HeaderPage title="Adicionar Sponsors" />
 
       <!--FORM-->
-        <b-row>
+      <b-row>
         <b-col cols="2"></b-col>
         <b-col>
-            <!--MENU DE TOPO-->
-      <b-row class="mb-4">
-        <b-col cols="0"></b-col>
-        <b-col>
-             <router-link
-            :to="{name:'admin'}"
-            tag="button"
-            class="btn btn-outline-info mr-2 mt-2"
-          ><i class="fas fa-bars"></i> MENU PRINCIPAL</router-link>
-        </b-col>
-        <b-col cols="1"></b-col>
-         
-      </b-row>
-
-         <form @submit.prevent="add">
+          <form @submit.prevent="add">
             <!--input-box nome-->
             <div class="form-group">
               <input
@@ -30,37 +16,40 @@
                 type="text"
                 class="form-control form-control-lg"
                 id="txtName"
-                placeholder="introduza o nome"
+                placeholder="Nome do Sponsor"
                 required
               />
             </div>
-            <!--opcão-box Type de SPONSOR-->
-               <div class="form-group">
+            <!--opcão-box tipo de Sponsors-->
+            <div class="form-group">
               <select
                 id="sltGroup"
                 class="form-control form-control-lg"
                 v-model="type"
                 required
               >
-                <option value>-- SELECIONA Type--</option>
+                <option value>-- SELECIONA Type --</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
-                <option value="h3">3</option>
+                <option value="3">3</option>
               </select>
             </div>
-            <!--text-box  atribuir Quota do EXPERT-->
-               <div class="form-group">     
+
+            <!--text-box  fazer a discrição do Sponsor-->
+            <div class="form-group">
               <textarea
                 id="txtDescription"
                 class="form-control form-control-lg"
-                placeholder="Atribua uma percentagem de 0 a 100 explique brevemente o motivo da atribuição"
+                placeholder="atribua uma percentagem e escreve descrição"
                 cols="30"
                 rows="10"
                 v-model="description"
+                
                 required
               ></textarea>
             </div>
- <button type="submit" class="btn btn-outline-success btn-lg mr-2">
+
+                  <button type="submit" class="btn btn-outline-success btn-lg mr-2">
               <i class="fas fa-plus-square"></i> ADICIONAR
             </button>
 
@@ -97,8 +86,8 @@ export default {
       description: "",
       montante: "",
 
-      evaluation: [],
-      comments: [],
+      //evaluation: [],
+      //comments: [],
     };
   },
   computed: {
@@ -108,6 +97,7 @@ export default {
 
     teste(){
       console.log(this.$data.name);
+     
     },
     add() {
       this.$store.dispatch(`sponsor/${ADD_SPONSOR}`, this.$data).then(

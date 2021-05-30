@@ -5,18 +5,23 @@ export const expertService = {
     const response = await fetch(`${API_URL}/experts`, {
       method: "GET",
       headers: {
+       
         'Content-Type': 'application/json',
         'Authorization': token
       }
     });
     if (response.ok) {
+      
       return await response.json();
     } else {
       throw Error(handleResponses(response.status));
     }
   },
+  
   async addExpert(token, payload) {
+    
     const response = await fetch(`${API_URL}/experts`, {
+      
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
@@ -24,11 +29,17 @@ export const expertService = {
       },
       body: JSON.stringify(payload)
     })
+   
     if (response.ok) {
+     
       return await response.json();
+      
     } else {
+     
+
       throw Error(handleResponses(response.status));
     }
+    
   },
   async editExpert(token, payload) {
     const response = await fetch(`${API_URL}/experts/${payload._id}`, {
@@ -68,7 +79,7 @@ function handleResponses(code) {
       message = "Não está autorizado a executar esta ação!"
       break;
     case 409:
-      message = "Já existe um utilizador com este username!"
+      message = "Já existe um Expert com esse nome!"
       break;
     default:
       message = "Mensagem desconhecida"

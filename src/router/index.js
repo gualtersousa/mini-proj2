@@ -51,6 +51,12 @@ const routes = [
     name: "addExpert",
     component: () => import("@/views/experts/AddExpert.vue")
   },
+
+  {
+    path: "/admin/experts/:expertId",
+    name: "editExpert",
+    component: () => import("@/views/experts/EditExpert.vue")
+  },
   {
     path: "/admin/experts",
     name: "listExperts",
@@ -62,6 +68,13 @@ const routes = [
     name: "addSponsor",
     component: () => import("@/views/sponsors/AddSponsor.vue")
   },
+  
+  {
+    path: "/admin/sponsors/:sponsorId",
+    name: "editSponsor",
+    component: () => import("@/views/sponsors/EditSponsor.vue")
+  },
+
 
   {
     path: "/admin/sponsors",

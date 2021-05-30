@@ -20,7 +20,7 @@
            <b-card-group deck class="mt-3">
              
             <AdminOptionBox routeName="listExperts" iconName="graduation-cap"  title="Experts"/>
-            <AdminOptionBox routeName="listSponsors" iconName="handshake"  title="SPONSORS"/>
+            <AdminOptionBox routeName="listSponsors" iconName="handshake"  title="Sponsors"/>
           </b-card-group>
        
         </b-col>

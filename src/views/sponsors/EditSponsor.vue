@@ -1,7 +1,7 @@
 <template>
   <section class="page-section">
     <b-container>
-      <HeaderPage title="Editar Patrocinadores" />
+      <HeaderPage title="Editar SPONSORS" />
 
       <!--FORM-->
       <b-row>
@@ -20,17 +20,17 @@
             </div>
             <div class="form-group">
               <select id="sltGroup" class="form-control form-control-lg" v-model="sponsor.group">
-                <option value>-- SELECIONA TIPO --</option>
-                <option value="economico">ECONÓMICO</option>
-                <option value="material">MATERIAL</option>
-                <option value="humano">HUMANO</option>
+                <option value>-- SELECIONA TYPE --</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
               </select>
             </div>
             <div class="form-group">
               <textarea
                 id="txtDescription"
                 class="form-control form-control-lg"
-                placeholder="escreve descrição"
+                placeholder="atribua uma percentagem e escreve descrição"
                 cols="30"
                 rows="10"
                 v-model="sponsor.description"
@@ -54,15 +54,11 @@
             
            
             
-            
-            <button type="button" class="btn btn-outline-success btn-lg mr-2" @click="removeComments()">
-              <i class="fas fa-edit"></i> REMOVER COMENTÁRIOS
-            </button>
             <button type="submit" class="btn btn-outline-success btn-lg mr-2">
               <i class="fas fa-edit"></i> ATUALIZAR
             </button>
             <router-link
-              :to="{name: 'listAnimals'}"
+              :to="{name: 'listSponsors'}"
               tag="button"
               class="btn btn-outline-danger btn-lg"
             >

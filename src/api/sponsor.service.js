@@ -10,6 +10,7 @@ export const sponsorService = {
       }
     });
     if (response.ok) {
+      console.log(response);
       return await response.json();
     } else {
       throw Error(handleResponses(response.status));
@@ -28,6 +29,9 @@ export const sponsorService = {
     if (response.ok) {
       return await response.json();
     } else {
+        console.log(token);
+        console.log(payload);
+        console.log(response.ok);
       throw Error(handleResponses(response.status));
     }
   },
@@ -70,6 +74,9 @@ function handleResponses(code) {
   switch (code) {
     case 401:
       message = "Não está autorizado a executar esta ação!"
+      break;
+    case 409:
+      message = "Já existe um Sponsor com esse nome!"
       break;
     default:
       message = "Mensagem desconhecida"

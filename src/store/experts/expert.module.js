@@ -20,8 +20,8 @@ const getters = {
   getExpertById: state => id => {
     return state.experts.find(expert => expert._id === id)
   },
-  getExpertsByLevel: state => level => {
-    return state.experts.filter(expert => expert.level === level)
+  getExpertsByType: state => type => {
+    return state.experts.filter(expert => expert.type === type)
   },
   getMessage: state => state.message
 };

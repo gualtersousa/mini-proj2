@@ -20,8 +20,8 @@ const getters = {
   getSponsorById: state => id => {
     return state.sponsors.find(sponsor => sponsor._id === id)
   },
-  getSponsorsByLevel: state => level => {
-    return state.sponsors.filter(sponsor => sponsor.level === level)
+  getSponsorsByType: state => type => {
+    return state.sponsors.filter(sponsor => sponsor.type === type)
   },
   getMessage: state => state.message
 };
@@ -29,10 +29,10 @@ const getters = {
 const actions = {
   [FETCH_SPONSORS]: async ({ commit, rootState }) => {
     return new Promise((resolve, reject) => {
-      sponsorService.getSponsors(rootState.auth.token)
+      sponsorService.getSponsor(rootState.auth.token)
         .then(
           res => {
-            commit(SET_EXPERTS, res.body);
+            commit(SET_SPONSORS, res.body);
             resolve(res)
           },
           err => {
@@ -42,6 +42,7 @@ const actions = {
         );
     });
   },
+
   [ADD_SPONSOR]: ({ commit, rootState }, payload) => {
     return new Promise((resolve, reject) => {
       sponsorService.addSponsor(rootState.auth.token, payload)
@@ -88,6 +89,7 @@ export const mutations = {
     state.message = message;
   }
 };
+
 
 export default {
   namespaced: true,
